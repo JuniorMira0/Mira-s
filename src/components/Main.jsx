@@ -3,9 +3,9 @@ import './Main.css';
 
 export default function Main() {
   return (
-    <section class="showcase-area">
-      <div class="container">
-        <div class="showcase-image">
+    <section className="showcase-area">
+      <div className="container">
+        <div className="showcase-image">
           <img src={Banner} className="person" alt="banner" />
         </div>
       </div>

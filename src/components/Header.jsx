@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 
@@ -21,9 +22,18 @@ const Header = () => {
 
   const links = [
     { text: 'Sobre', href: '#' },
-    { text: 'Instagram', href: '#' },
-    { text: 'Delivery', href: '#' },
-    { text: 'WhatsApp', href: '#' },
+    {
+      text: 'Instagram',
+      href: 'https://www.instagram.com/pizzariadetroit/',
+    },
+    {
+      text: 'Delivery',
+      href: 'https://loja.neemo.com.br/pizzariadetroit',
+    },
+    {
+      text: 'WhatsApp',
+      href: 'https://wa.me/message/3LZQQHCRFO3MI1',
+    },
     { text: 'Contato', href: '#' },
   ];
 
@@ -37,7 +47,12 @@ const Header = () => {
           <ul>
             {links.map((link, index) => (
               <li key={index}>
-                <a href={link.href} className="nav-link">
+                <a
+                  href={link.href}
+                  className="nav-link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {link.text}
                 </a>
               </li>
