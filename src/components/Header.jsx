@@ -1,40 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const links = [
+    { text: 'Sobre', href: '#' },
+    { text: 'Instagram', href: '#' },
+    { text: 'Delivery', href: '#' },
+    { text: 'WhatsApp', href: '#' },
+    { text: 'Contato', href: '#' },
+  ];
+
   return (
-    <header>
-      <nav class="container">
+    <header className={scrolled ? 'scrolled' : ''}>
+      <nav className="container">
         <a href="#" className="logo">
           Mira'<span>s</span> Pizzaria.
         </a>
         <div className="links">
           <ul>
-            <li>
-              <a href="#" className="nav-link">
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link">
-                Delivery
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link">
-                WhatsApp
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link">
-                Contato
-              </a>
-            </li>
+            {links.map((link, index) => (
+              <li key={index}>
+                <a href={link.href} className="nav-link">
+                  {link.text}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
