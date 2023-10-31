@@ -1,9 +1,18 @@
+/* Font */
+@font-face {
+  font-family: 'Huglove';
+  src: url('../fonts/Huglove.otf') format('opentype');
+  /* Outros formatos de fonte, se necessário */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Variáveis CSS */
 :root {
   --hue-1: 0;
   --hue-2: 47;
   --heading-color: hsl(var(--hue), 0%, 0%);
-  --text-color: hsl(var(--hue-1), 17%, 63%);
+  --text-color: hsl(var(--hue-1), 0%, 0%);
   --main-color-1: hsl(var(--hue-1), 100%, 60%);
   --bg-color-transparent: rgba(255, 255, 255, 0.6);
 }
@@ -41,11 +50,17 @@ header.scrolled {
   margin: 0 auto;
 }
 
+nav.container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* Logo */
 .logo {
   margin-right: 1.5rem;
-  font-family: "Abril Fatface", cursive;
-  font-size: 1.5rem;
+  font-family: "Huglove", cursive;
+  font-size: 2.5rem;
   color: var(--heading-color);
   letter-spacing: 1px;
 }

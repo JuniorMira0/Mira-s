@@ -41,7 +41,7 @@ const Header = () => {
     <header className={scrolled ? 'scrolled' : ''}>
       <nav className="container">
         <a href="#" className="logo">
-          Mira'<span>s</span> Pizzaria.
+          Mira<span>'</span>s.
         </a>
         <div className="links">
           <ul>
