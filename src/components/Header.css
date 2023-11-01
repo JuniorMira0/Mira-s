@@ -50,7 +50,7 @@ header.scrolled {
   margin: 0 auto;
 }
 
-nav.container{
+nav.container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -72,7 +72,7 @@ nav.container{
 /* Links */
 .links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space between;
   align-items: center;
 }
 
@@ -117,4 +117,16 @@ nav.container{
 .nav-link:hover::after {
   width: 100%;
   opacity: 0.2;
+}
+
+@media (max-width: 767px) {
+  /* Estilos para smartphones */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Estilos para tablets */
+}
+
+@media (min-width: 992px) {
+  /* Estilos para desktops */
 }
